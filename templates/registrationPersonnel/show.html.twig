@@ -1,0 +1,69 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}NiveauEtude{% endblock %}
+
+{% block body %}
+    <h1>Personnel</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ personnel.id }}</td>
+            </tr>
+              <tr>
+                <th>Cin</th>
+                <td>{{ personnel.cin }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ personnel.Nom }}</td>
+            </tr>
+             <tr>
+                <th>Nom</th>
+                <td>{{ personnel.Nom }}</td>
+            </tr>
+             <tr>
+                <th>Prenom</th>
+                <td>{{ personnel.Prenom }}</td>
+            </tr>
+
+              <tr>
+                <th>Username</th>
+                <td>{{ personnel.username }}</td>
+            </tr>
+              <tr>
+                <th>Adresse</th>
+                <td>{{ personnel.Adresse }}</td>
+            </tr>
+              <tr>
+                <th>Telephone</th>
+                <td>{{ personnel.Telephone }}</td>
+            </tr>
+
+              <tr>
+                <th>Data Naissance</th>
+                <td>{{ personnel.DateNaissance ? personnel.DateNaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+
+             <tr>
+                <th>Bureau</th>
+                <td>{{ personnel.bureau.numero }}</td>
+            </tr>
+
+            
+             <tr>
+                <th>Grade</th>
+                <td>{{ personnel.grade.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('list_personnel') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+{#
+    <a href="{{ path('niveau_etude_edit', {'id': niveau_etude.id}) }}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+#}
+    {{ include('registrationPersonnel/_delete.html.twig') }}
+
+
+{% endblock %}

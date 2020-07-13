@@ -1,0 +1,27 @@
+ {% extends "base_user.html.twig" %}
+
+{% block title %}Annonce index{% endblock %}
+
+{% block body %}
+    <h1>Annonces</h1>
+        <br>
+        <br>
+    
+        {% for annonce in var %}
+            
+               
+                <p><a href="{{path('details_user',{'id':annonce.id })}}" style="
+                    color:blue;">{{ annonce.Titre }}</a></p>
+                <p>{{ annonce.DateAjout ? annonce.DateAjout|date('Y-m-d') : '' }}</p>
+
+                <p>************************************************************************************************************************************</p>
+              
+            
+        {% else %}
+           
+        {% endfor %}
+       
+     {{ knp_pagination_render( var )}}
+   
+{% endblock %}
+
